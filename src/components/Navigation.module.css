@@ -1,0 +1,60 @@
+.navigationContainer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navigationLeft {
+   display: flex;
+   gap: 2rem;
+   align-items: center;
+}
+
+.navigationRight {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+}
+
+.navigationForm {
+   background-color: #f5f5f5;
+   border-radius: 25px;
+   display: flex;
+   align-items: center;
+}
+
+.navigationForm:hover {
+   background-color: #E5E5E5;
+}
+
+.navigationForm input {
+   border: 0;
+   background-color: transparent;
+}
+
+.navigationForm:focus {
+  right: 20;
+}
+
+.navigationForm input:focus {
+   outline: none;
+   width: 40vw;
+}
+
+.navigationForm input::placeholder {
+   font-size: 1rem;
+}
+
+.navigationSearchBtn {
+   border-radius: 30px;
+   padding: 0.5rem 0.6rem;
+   background-color: transparent;
+   border: 0;
+   left: 0;
+   margin-right: 0.1rem;
+}
+
+svg,
+img {
+   cursor: pointer;
+}
