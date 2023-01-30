@@ -59,8 +59,22 @@ img {
    cursor: pointer;
 }
 
-.react-select-container{
+.react-select-container {
    outline: none;
    border-color: red;
 }
 
+.iconFull {
+   animation-name: full;
+   animation-duration: 0.7s;
+   animation-timing-function: ease-in-out;
+}
+
+@keyframes full {
+   from {
+      transform: scale(1);
+   }
+   to {
+      transform: scale(1.3);
+   }
+}

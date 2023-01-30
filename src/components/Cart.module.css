@@ -1,0 +1,51 @@
+.cartContainer{
+   display: flex;
+   margin: 2rem 5rem;
+}
+
+.cartWrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   border-right: 1px solid #7e7d7d;
+   width: 70%;
+}
+
+.cart {
+   position: relative;
+   display: flex;
+   gap: 2rem;
+   padding: 1rem;
+   margin: 1rem;
+}
+
+.cartContent {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   font-family: 'Readex Pro';
+   gap: 0.6rem;
+   min-width: 40%;
+}
+
+.cartTitle {
+   font-weight: 600;
+}
+
+.cartInfo {
+   font-weight: 400;
+   color: #7e7d7d;
+}
+
+.cartImg {
+   max-width: 15rem;
+}
+
+.iconDelete {
+   position: absolute;
+   right: 0;
+}
+
+.cartTotal {
+   max-width: 30%;
+}
