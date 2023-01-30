@@ -2,6 +2,7 @@
    position: relative;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    padding: 1rem;
    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
    font-family: 'Readex Pro';
@@ -10,15 +11,13 @@
 
 .heartIcon {
    position: absolute;
-   /* right: 1.3rem; */
 }
 
 .cardImg {
-   max-width: 20rem;
+   max-width: 15rem;
    display: flex;
    justify-content: center;
-   margin: 0 auto;
-   margin-bottom: 0.5rem;
+   margin: 0.5rem auto;
 }
 
 .cardTitle {
@@ -39,6 +38,10 @@
 
 .cartIcon {
    position: absolute;
-   right: 0.4rem;
-   top: 2.5rem;
+   right: 0.1rem;
+   bottom: 0;
+}
+
+.hidden {
+   visibility: hidden;
 }

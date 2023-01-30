@@ -33,7 +33,7 @@
 }
 
 .navigationForm:focus {
-  right: 20;
+   right: 20;
 }
 
 .navigationForm input:focus {
@@ -58,3 +58,9 @@ svg,
 img {
    cursor: pointer;
 }
+
+.react-select-container{
+   outline: none;
+   border-color: red;
+}
+

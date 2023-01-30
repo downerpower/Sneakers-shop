@@ -20,19 +20,96 @@ code {
 .container {
   position: relative;
   max-width: 1400px;
-  /* height: 100%; */
   margin: 0 auto;
   padding: 1rem 2rem;
 }
 
 .container--blurred {
-  /* background-color: rgba(0, 0, 0, 0.4); */
-
+  opacity: 0.7;
 }
 
 .sneaker-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin: 1rem;
+}
+
+.react-select__control,
+.react-select-control
+ {
+  border-color: transparent;
+}
+
+.react-select__indicators,
+.react-select__indicator {
+  padding: 0;
+}
+
+.react-select__indicator-separator {
+  display: none;
+}
+
+.react-select__indicator svg {
+  display: none;
+}
+
+
+/* .react-select-container:focus {
+  outline: 0;
+  border: 0;
+}
+
+.react-select__control:active,
+.react-select__control:focus,
+.react-select__control:hover,
+.react-select-control:hover {
+  border-color: red;
+  box-shadow: none;
+  border: none;
+}
+
+.react-select__option:focus {
+  background-color: black;
+  color: #fff;
+}
+
+.react-select__option:hover {
+  background-color: red;
+} */
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
+  gap: 3px;
+}
+
+.pagination .page-num {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  padding: 0.5rem 0.8rem;
+  color: black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.page-num:hover {
+  background-color: #bebaba;
+  opacity: 0.4;
+}
+
+.pagination .active {
+  background-color: black;
+  border: 0;
+  color: white;
+}
+
+.pagination .disabled {
+  display: none;
 }

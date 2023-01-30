@@ -1,0 +1,81 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem;
+   margin-top: 3rem;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+   margin: 0 auto;
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   padding: 1rem;
+   gap: 2rem;
+}
+
+.form input {
+   padding: 1rem 0.5rem;
+   font-size: 1rem;
+   border: 0;
+   border-bottom: 1px solid #b9b9b9;
+}
+
+.form input:focus {
+   outline: none;
+}
+
+.btn {
+   margin-top: 4rem;
+   padding: 0.6rem;
+   font-size: 1rem;
+   background-color: black;
+   color: #EFEFEF;
+   font-family: 'Readex Pro';
+   border: 0;
+   cursor: pointer;
+}
+
+.btn:hover {
+   transform: scale(1.1);
+}
+
+.img {
+   width: 23rem;
+   border-radius: 15px;
+   opacity: 0.8;
+}
+
+.info {
+   color: #a4a2a2;
+   margin-top: 1rem;
+}
+
+.info a {
+   text-decoration: none;
+   color: black;
+   font-weight: 500;
+}
+
+.password {
+   position: relative;
+   border-bottom: 1px solid #b9b9b9;
+}
+
+.password input{
+   border-bottom: 0;
+}
+
+.password svg {
+   position: absolute;
+   top: 0.9rem;
+   right: 0.4rem;
+}

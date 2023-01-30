@@ -1,19 +1,26 @@
+import { useState } from 'react';
 import styles from './SneakerCard.module.css'
 
 const SneakerCard = ({ sneaker }) => {
+   const [isIconShown, setIsIconShown] = useState(false);
+
    return (
-      <div className={styles.sneakerCardContainer}>
-         <svg className={styles.heartIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="none" d="M0 0H24V24H0z" /><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z" /></svg>
+      <div
+         className={styles.sneakerCardContainer}
+         onMouseEnter={() => setIsIconShown(true)}
+         onMouseLeave={() => setIsIconShown(false)}
+      >
+         <svg className={`${styles.heartIcon} ${!isIconShown ? styles.hidden : 'undefinded'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="none" d="M0 0H24V24H0z" /><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z" fill="rgba(126,125,125,1)" /></svg>
          <div>
-            <img src={sneaker.media.imageUrl} alt={sneaker.title} className={styles.cardImg} />
+            {sneaker.media.smallImageUrl && <img src={sneaker.media.smallImageUrl} alt={sneaker.title} className={styles.cardImg} />}
          </div>
          <div className={styles.cardContent}>
             <span className={styles.cardTitle}>{sneaker.title}</span>
             <span className={styles.cardInfo}>{sneaker.brand}</span>
             <span className={styles.cardInfo}>${sneaker.retailPrice}</span>
-            <svg className={styles.cartIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="none" d="M0 0h24v24H0z" /><path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
+            <svg className={styles.cartIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35"><path fill="none" d="M0 0h24v24H0z" /><path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="rgba(126,125,125,1)" /></svg>
          </div>
-      </div>
+      </div >
    );
 }
 
