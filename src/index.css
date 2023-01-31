@@ -35,49 +35,6 @@ code {
   margin: 1rem;
 }
 
-.react-select__control,
-.react-select-control
- {
-  border-color: transparent;
-}
-
-.react-select__indicators,
-.react-select__indicator {
-  padding: 0;
-}
-
-.react-select__indicator-separator {
-  display: none;
-}
-
-.react-select__indicator svg {
-  display: none;
-}
-
-
-/* .react-select-container:focus {
-  outline: 0;
-  border: 0;
-}
-
-.react-select__control:active,
-.react-select__control:focus,
-.react-select__control:hover,
-.react-select-control:hover {
-  border-color: red;
-  box-shadow: none;
-  border: none;
-}
-
-.react-select__option:focus {
-  background-color: black;
-  color: #fff;
-}
-
-.react-select__option:hover {
-  background-color: red;
-} */
-
 .pagination {
   list-style: none;
   display: flex;
@@ -112,4 +69,16 @@ code {
 
 .pagination .disabled {
   display: none;
+}
+
+.message--empty {
+  font-family: 'Readex Pro';
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.message--empty svg {
+  margin-left: 0.5rem;
+  margin-bottom: -0.35rem;
 }

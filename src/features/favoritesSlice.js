@@ -12,7 +12,7 @@ export const favoritesSlice = createSlice({
          state.value.push(action.payload)
       },
       removeFromFavorites: (state, action) => {
-         state.value.splice(action.payload, 1)
+         state.value.splice(state.value.findIndex(item => item.id === action.payload), 1)
       }
    }
 })

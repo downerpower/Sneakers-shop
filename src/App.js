@@ -7,15 +7,16 @@ import Menu from "./components/Menu";
 import SneakerList from "./components/SneakerList";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
+import SneakerDetail from "./components/SneakerDetail";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelectOptionChange = (e) => {
-    setSelectedOption(e.value);
+    selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
   }
 
   const handleMenuOpenClick = () => {
@@ -36,9 +37,15 @@ function App() {
     setInputValue('');
   }
 
+  const handleLinkOpenClick = () => {
+    setQuery("");
+    setInputValue('');
+    setSelectedOption('');
+  }
+
   return (
     <>
-      {isMenuOpen && <Menu handleMenuCloseClick={handleMenuCloseClick} />}
+      {isMenuOpen && <Menu handleMenuCloseClick={handleMenuCloseClick} handleLinkOpenClick={handleLinkOpenClick} />}
       <div onClick={handleMenuCloseClick} className={`container ${isMenuOpen && `container--blurred`} `}>
         <Navigation
           handleMenuOpenClick={handleMenuOpenClick}
@@ -49,9 +56,10 @@ function App() {
           handleInputChange={handleInputChange}
           handleSelectOptionChange={handleSelectOptionChange}
           selectedOption={selectedOption}
+          handleLinkOpenClick={handleLinkOpenClick}
         />
         <Routes>
-          {['/home', '/new', '/men', '/women', '/child'].map(path => <Route
+          {['/', '/men', '/women', '/child'].map(path => <Route
             key={path}
             exact path={path}
             element={
@@ -76,6 +84,10 @@ function App() {
           <Route
             path='/signUp'
             element={<SignUp />}
+          />
+          <Route
+            path='/:id'
+            element={<SneakerDetail />}
           />
         </Routes>
       </div>
