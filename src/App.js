@@ -2,18 +2,28 @@ import Navigation from "./components/Navigation";
 import { Routes, Route } from "react-router-dom";
 import Favorite from "./components/Favorite";
 import Cart from "./components/Cart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Menu from "./components/Menu";
 import SneakerList from "./components/SneakerList";
-import SignUp from "./components/SignUp";
-import LogIn from "./components/LogIn";
 import SneakerDetail from "./components/SneakerDetail";
+import SignUp from "./components/forms/SignUp";
+import LogIn from "./components/forms/LogIn";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
+  const [isLogged, setIsLogged] = useState(false);
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    localStorage.setItem('loginState', JSON.stringify(isLogged));
+  }, [isLogged]);
+
+  useEffect(() => {
+    setIsLogged(localStorage.getItem('loginState'))
+  }, []);
 
   const handleSelectOptionChange = (e) => {
     selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
@@ -45,7 +55,12 @@ function App() {
 
   return (
     <>
-      {isMenuOpen && <Menu handleMenuCloseClick={handleMenuCloseClick} handleLinkOpenClick={handleLinkOpenClick} />}
+      {isMenuOpen && <Menu
+        handleMenuCloseClick={handleMenuCloseClick}
+        handleLinkOpenClick={handleLinkOpenClick}
+        isLogged={isLogged}
+        setIsLogged={setIsLogged}
+      />}
       <div onClick={handleMenuCloseClick} className={`container ${isMenuOpen && `container--blurred`} `}>
         <Navigation
           handleMenuOpenClick={handleMenuOpenClick}
@@ -79,11 +94,21 @@ function App() {
           />
           <Route
             path='/logIn'
-            element={<LogIn />}
+            element={<LogIn
+              isLogged={isLogged}
+              setIsLogged={setIsLogged}
+              userName={userName}
+              setUserName={setUserName}
+            />}
           />
           <Route
             path='/signUp'
-            element={<SignUp />}
+            element={< SignUp
+              isLogged={isLogged}
+              setIsLogged={setIsLogged}
+              userName={userName}
+              setUserName={setUserName}
+            />}
           />
           <Route
             path='/:id'

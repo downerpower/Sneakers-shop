@@ -2,7 +2,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 2rem;
+   padding: 1.5rem;
    margin-top: 3rem;
 }
 
@@ -19,14 +19,13 @@
    flex-direction: column;
    width: 50%;
    padding: 1rem;
-   gap: 2rem;
+   gap: 1.5rem;
 }
 
 .form input {
    padding: 1rem 0.5rem;
    font-size: 1rem;
    border: 0;
-   border-bottom: 1px solid #b9b9b9;
 }
 
 .form input:focus {
@@ -34,7 +33,7 @@
 }
 
 .btn {
-   margin-top: 4rem;
+   margin-top: 1.2rem;
    padding: 0.6rem;
    font-size: 1rem;
    background-color: black;
@@ -56,7 +55,7 @@
 
 .info {
    color: #a4a2a2;
-   margin-top: 1rem;
+   margin-top: 0.1rem;
 }
 
 .info a {
@@ -65,17 +64,62 @@
    font-weight: 500;
 }
 
-.password {
+.inputField {
    position: relative;
    border-bottom: 1px solid #b9b9b9;
 }
 
-.password input{
+.inputField input {
    border-bottom: 0;
 }
 
-.password svg {
+.inputField input:autofill {
+   background: transparent;
+}
+
+.inputField svg {
    position: absolute;
    top: 0.9rem;
    right: 0.4rem;
 }
+
+.errorField {
+   background-color: #FEEAED;
+   border-bottom: 0;
+
+}
+
+.error {
+   margin-top: -1.3rem;
+   color: #FF1A40;
+}
+
+.error svg {
+   margin-bottom: -0.4rem;
+}
+
+.social {
+   background-color: transparent;
+   border: 0;
+}
+
+.btn img {
+   width: 1.1rem;
+}
+
+.btnSocial {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0.5rem;
+   background-color: #F0F0F0;
+   color: black;
+   margin-top: -0.9rem;
+}
+
+.message {
+   font-family: 'Readex Pro';
+   font-size: 2rem;
+   text-align: center;
+   margin-top: 4rem;
+ }
