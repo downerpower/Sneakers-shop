@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const handleSelectOptionChange = (e) => {
-    selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
+   !selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
   }
 
   const handleMenuOpenClick = () => {

@@ -29,7 +29,6 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
          .then((data) => {
             data && setIsLogged(true);
             data.user.displayName && setUserName(data.user.displayName);
-            console.log(data.user.displayName)
          })
 
    }

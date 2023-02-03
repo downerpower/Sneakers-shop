@@ -13,10 +13,10 @@ body {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 code {
@@ -88,4 +88,27 @@ code {
 .message--empty svg {
   margin-left: 0.5rem;
   margin-bottom: -0.35rem;
+}
+
+.react-select__control {
+  position: relative;
+  padding: 0.1rem;
+  border: 0 !important;
+  cursor: pointer !important;
+  min-width: 10rem;
+}
+
+.react-select__control--is-focused {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.styles input:focus-visible {
+  outline: 0px !important;
+}
+
+.btn--sort {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
