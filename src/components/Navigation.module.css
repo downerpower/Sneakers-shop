@@ -53,6 +53,12 @@ img {
    cursor: pointer;
 }
 
+a {
+   text-decoration: none;
+   font-family: inherit;
+   color: inherit;
+}
+
 .iconFull {
    animation-name: full;
    animation-duration: 0.7s;

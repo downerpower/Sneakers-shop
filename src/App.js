@@ -1,5 +1,5 @@
 import Navigation from "./components/Navigation";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Favorite from "./components/Favorite";
 import Cart from "./components/Cart";
 import { useState, useEffect } from "react";
@@ -17,6 +17,9 @@ function App() {
   const [isLogged, setIsLogged] = useState(false);
   const [userName, setUserName] = useState('');
 
+  const navigate = useNavigate();
+  const pathname = window.location.pathname;
+
   useEffect(() => {
     localStorage.setItem('loginState', JSON.stringify(isLogged));
   }, [isLogged]);
@@ -26,7 +29,7 @@ function App() {
   }, []);
 
   const handleSelectOptionChange = (e) => {
-   !selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
+    !selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
   }
 
   const handleMenuOpenClick = () => {
@@ -45,6 +48,10 @@ function App() {
     e.preventDefault();
     setQuery(inputValue);
     setInputValue('');
+
+    if (pathname !== '/women' && pathname !== '/men' && pathname !== '/child' !== '/') {
+      navigate('/');
+    }
   }
 
   const handleLinkOpenClick = () => {
@@ -55,12 +62,13 @@ function App() {
 
   return (
     <>
-      {isMenuOpen && <Menu
+      <Menu
         handleMenuCloseClick={handleMenuCloseClick}
         handleLinkOpenClick={handleLinkOpenClick}
         isLogged={isLogged}
         setIsLogged={setIsLogged}
-      />}
+        isMenuOpen={isMenuOpen}
+      />
       <div onClick={handleMenuCloseClick} className={`container ${isMenuOpen && `container--blurred`} `}>
         <Navigation
           handleMenuOpenClick={handleMenuOpenClick}

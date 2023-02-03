@@ -18,7 +18,7 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
             {!isMenuOpen ?
                <svg onClick={handleMenuOpenClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>
                :
-               <svg onClick={handleMenuCloseClick} className={styles.iconOpen} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(169,167,167,1)" /></svg>
+               <svg onClick={handleMenuCloseClick} className={styles.iconClose} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(169,167,167,1)" /></svg>
             }
             <Link to='/'>
                <div>
@@ -42,7 +42,6 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
                classNamePrefix='react-select'
                theme={(theme, isFocused) => ({
                   ...theme,
-                  // backgroundColor: isSelected ? 'black' : 'red',
                   colors: {
                      ...theme.colors,
                      text: 'orangered',
@@ -53,6 +52,7 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
                })}
             />
             <form className={styles.navigationForm} onSubmit={handleSearchSubmit}>
+
                <button type='submit' className={styles.navigationSearchBtn}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" /></svg>
                </button>
@@ -64,10 +64,12 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
                   className={styles.navigationInput}
                   placeholder="Search"
                />
+
                {inputValue &&
                   <svg className={styles.btnDelete} onClick={handleLinkOpenClick} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" /></svg>
                }
             </form>
+
             <Link to='/favorite' onClick={handleLinkOpenClick}>
                {favoriteItems.length > 0 ?
                   <svg className={styles.iconFull} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z" /><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z" /></svg>

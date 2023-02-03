@@ -24,8 +24,6 @@ const SneakerCard = ({ sneaker }) => {
       dispatch(addToCart(sneaker))
    }
 
-
-
    return (
       <div
          className={styles.sneakerCardContainer}
