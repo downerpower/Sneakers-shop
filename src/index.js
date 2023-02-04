@@ -5,15 +5,18 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import WindowWidthContextProvider from './context/WindowWidthContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <WindowWidthContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </WindowWidthContextProvider>
     </Provider>
   </React.StrictMode>
 );

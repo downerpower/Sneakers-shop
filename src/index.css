@@ -36,8 +36,8 @@ code {
 }
 
 .sneaker-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 1rem;
 }
@@ -111,4 +111,38 @@ code {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .sneaker-list {
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 1rem 1rem;
+  }
+
+  .react-select__control {
+    min-width: 5rem;
+  }
+
+  .react-select__option {
+    font-size: 0.8rem !important;
+  }
+
+  .pagination {
+    font-size: 1.1rem;
+    margin: 2rem;
+  }
+
+  .pagination .page-num {
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination {
+    font-size: 1rem;
+    margin: 1.5rem;
+  }
 }

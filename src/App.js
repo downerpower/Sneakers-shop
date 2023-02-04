@@ -1,5 +1,5 @@
 import Navigation from "./components/Navigation";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Favorite from "./components/Favorite";
 import Cart from "./components/Cart";
 import { useState, useEffect } from "react";
@@ -18,7 +18,12 @@ function App() {
   const [userName, setUserName] = useState('');
 
   const navigate = useNavigate();
+  const location = useLocation();
   const pathname = window.location.pathname;
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   useEffect(() => {
     localStorage.setItem('loginState', JSON.stringify(isLogged));

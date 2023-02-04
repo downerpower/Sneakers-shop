@@ -9,18 +9,19 @@
 .menu {
    position: fixed;
    background-color: #ffff;
-   width: 25%;
+   width: 20rem;
    height: 100vh;
    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
    transform: translateX(0%);
-   transition: transform 0.6s cubic-bezier(0.95, 0.05, 0.795, 0.035);;
+   transition: transform 0.6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+   ;
    z-index: 10;
 }
 
 .menuClose {
    position: fixed;
    background-color: #ffff;
-   width: 25%;
+   width: 20rem;
    height: 100vh;
    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.25);
    transform: translateX(-100%);
@@ -70,4 +71,14 @@
 
 .menuBtns button:hover {
    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+   .menu {
+      width: 50%;
+   }
+
+   .menuClose {
+      width: 50%;
+   }
 }

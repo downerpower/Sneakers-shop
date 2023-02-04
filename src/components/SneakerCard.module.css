@@ -1,4 +1,5 @@
 .sneakerCardContainer {
+   flex: 1 1 0;
    position: relative;
    display: flex;
    flex-direction: column;
@@ -45,4 +46,43 @@
 
 .hidden {
    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+   .cardImg {
+      max-width: 10rem;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .sneakerCardContainer {
+      padding: 0.5rem;
+      border-radius: 12px;
+   }
+   .heartIcon {
+      left: 0.4rem;
+      top: 0;
+   }
+
+   .cartIcon {
+      right: 0;
+   }
+
+   .cardImg {
+      max-width: 6rem;
+   }
+
+   .cardContent {
+      gap: 0.2rem;
+   }
+
+   .cardTitle {
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+   }
+
+
+   .cardInfo {
+      font-size: 0.8rem;
+   }
 }

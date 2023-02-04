@@ -7,7 +7,7 @@
 .navigationLeft {
    display: flex;
    gap: 2rem;
-   align-items: center;
+   /* align-items: center; */
 }
 
 .navigationRight {
@@ -32,8 +32,6 @@
 .navigationInput:focus {
    outline: none;
    font-family: inherit;
-   /* font-size: inherit; */
-   /* font-size: 1rem; */
 }
 
 .navigationInput::placeholder {
@@ -53,6 +51,10 @@ img {
    cursor: pointer;
 }
 
+svg {
+   width: 24px;
+}
+
 a {
    text-decoration: none;
    font-family: inherit;
@@ -69,7 +71,38 @@ a {
    from {
       transform: scale(1);
    }
+
    to {
       transform: scale(1.3);
    }
+}
+
+@media screen and (max-width: 768px) {
+   img {
+      max-width: 8rem;
+   }
+
+   .navigationForm {
+      max-width: 8rem;
+   }
+
+   svg {
+      width: 20px;
+   }
+
+   .navigationLeft {
+      display: flex;
+      gap: 1rem;
+   }
+
+   .navigationRight {
+      gap: 0.5rem;
+   }
+}
+
+.containerMobile {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   margin-top: 0.5rem;
 }
