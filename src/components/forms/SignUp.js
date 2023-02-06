@@ -1,6 +1,5 @@
 import AccountForm from "./AccountForm";
 
-
 const SignUp = ({isLogged, userName, setUserName, setIsLogged}) => {
    return (
       <AccountForm

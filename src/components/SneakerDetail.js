@@ -8,7 +8,7 @@ import styles from './SneakerDetail.module.css'
 const SneakerDetail = () => {
    const { id } = useParams();
 
-   const { data, error, loading } = useFetch(`https://example-data.draftbit.com/sneakers/${id}`);
+   const { data } = useFetch(`https://example-data.draftbit.com/sneakers/${id}`);
 
    const favorites = useSelector(state => state.favorites.value);
    const cartItems = useSelector(state => state.cart.value);
@@ -19,11 +19,11 @@ const SneakerDetail = () => {
    const dispatch = useDispatch();
 
    const handleAddToFavoriteClick = () => {
-      dispatch(addToFavorites(data))
+      dispatch(addToFavorites(data));
    }
 
    const handleAddToCartClick = () => {
-      dispatch(addToCart(data))
+      dispatch(addToCart(data));
    }
 
    return (

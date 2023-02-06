@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './SneakerCard.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorites, removeFromFavorites } from '../features/favoritesSlice';
 import { addToCart, removeFromCart } from '../features/cartSlice';
 import { useWindowWidthContextContext } from "../context/WindowWidthContext";
+import styles from './SneakerCard.module.css'
 
 const SneakerCard = ({ sneaker }) => {
    const [isIconShown, setIsIconShown] = useState(false);

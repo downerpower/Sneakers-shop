@@ -71,7 +71,6 @@
    }
 }
 
-
 @media screen and (max-width: 486px) {
    .wrapper {
       flex-direction: column;

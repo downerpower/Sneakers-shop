@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, Navigate } from "react-router-dom";
 import { Formik, Field, Form } from 'formik';
-import { auth, googleProvider, firebase } from '../../features/firebase/base'
+import { auth, googleProvider, firebase } from '../../firebase/base';
 import { signInWithPopup } from "firebase/auth";
-
-import styles from './AccountForm.module.css'
+import styles from './AccountForm.module.css';
 
 const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpForm }) => {
    const [isShown, setIsShown] = useState(false);
@@ -18,29 +17,27 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
       if (isLogged) {
          setTimeout(() => {
             setShowMessage(true);
-
          }, 2000)
          setShowMessage(false);
       }
-   }, [isLogged])
+   }, [isLogged]);
 
    const handleGoogleSignUp = () => {
       signInWithPopup(auth, googleProvider)
          .then((data) => {
             data && setIsLogged(true);
             data.user.displayName && setUserName(data.user.displayName);
-         })
-
-   }
+         });
+   };
 
    const toggleShowPasswordClick = () => {
       setIsShown(prevValue => !prevValue);
 
       setTimeout(function () {
          inputRef.current.focus();
-         inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length)
+         inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length);
       }, 0);
-   }
+   };
 
    const validate = (value) => {
       let error;
@@ -62,7 +59,6 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
          error = 'Invalid email address';
       }
-
       return error;
    }
 
@@ -71,7 +67,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
          {!isLogged &&
             <div className={styles.container}>
                <div className={styles.wrapper}>
-                  {isSignUpForm && <img src="./sneak-signup.jpg" alt="sneaker" className={styles.img} />}
+                  {isSignUpForm && <img src="img/sneak-signup.jpg" alt="sneaker" className={styles.img} />}
                   <Formik
                      initialValues={isSignUpForm ? {
                         firstName: '',
@@ -84,11 +80,9 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                            password: ''
                         }
                      }
-
                      onSubmit={(values, { resetForm }) => {
                         if (isSignUpForm) {
-                           let url = 'https://sneakers-shop-8264b-default-rtdb.europe-west1.firebasedatabase.app/users.json'
-
+                           let url = 'https://sneakers-shop-8264b-default-rtdb.europe-west1.firebasedatabase.app/users.json';
                            fetch(url, {
                               method: 'POST',
                               body: JSON.stringify(values),
@@ -110,21 +104,16 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                               .equalTo(values.email)
                               .once("value", snapshot => {
                                  const userData = snapshot.val();
-
                                  snapshot.forEach(function (childNodes) {
                                     setUserName(childNodes.val().firstName)
-                                 })
-
-                                 const flatUserData = JSON.stringify(userData)
-
+                                 });
+                                 const flatUserData = JSON.stringify(userData);
                                  if (userData) {
                                     if (flatUserData.includes(values.password)) {
-                                       console.log("user logged in!");
                                        setIsEmailWrong(false);
                                        setIsPasswordWrong(false);
                                        setIsLogged(true);
                                     } else {
-                                       console.log('wrong password')
                                        setIsEmailWrong(false);
                                        setIsPasswordWrong(true);
                                        resetForm({
@@ -133,15 +122,13 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                                           }
                                        });
                                     }
-
                                  } else {
-                                    console.log("Email don't exist")
                                     setIsEmailWrong(true);
                                     setIsPasswordWrong(false);
                                     resetForm({ values: '' })
                                  }
                               });
-                        }
+                        };
                      }}
 
                   >
@@ -177,7 +164,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                            {isPasswordWrong && <div className={styles.error}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="rgba(255,26,64,1)" /></svg> Password is incorrect</div>}
                            <button className={styles.btn} type="submit" onClick={() => validateForm()}>{isSignUpForm ? 'Sign up' : 'Log in'}</button>
                            <button className={`${styles.btn} ${styles.btnSocial}`} onClick={handleGoogleSignUp} type="button">
-                            <img src='../google.png' alt='google-logo' />  Log in with Google 
+                            <img src='img/google.png' alt='google-logo' />  Log in with Google 
                            </button>
                            {
                               isSignUpForm ?
@@ -187,7 +174,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                         </Form>
                      )}
                   </Formik>
-                  {!isSignUpForm && <img className={styles.img} src="./sneaker.jpg" alt="sneaker" />}
+                  {!isSignUpForm && <img className={styles.img} src="img/sneaker.jpg" alt="sneaker" />}
                </div>
             </div >
          }

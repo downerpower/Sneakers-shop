@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './Menu.module.css'
+import styles from './Menu.module.css';
 
 const Menu = ({ handleMenuCloseClick, handleLinkOpenClick, isLogged, setIsLogged, isMenuOpen }) => {
    return (

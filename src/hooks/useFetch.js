@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useFetch = (url, query) => {
+const useFetch = (url) => {
    const [data, setData] = useState(null)
    const [error, setError] = useState(null)
    const [loading, setLoading] = useState(false)
@@ -16,11 +16,12 @@ const useFetch = (url, query) => {
             })
       } catch (err) {
          setError(err)
+         console.log(err);
          setLoading(false);
       } finally {
          setLoading(false);
       }
-   }, [url,])
+   }, [url])
 
    return { data, error, loading }
 

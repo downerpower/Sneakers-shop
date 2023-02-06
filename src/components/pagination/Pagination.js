@@ -11,9 +11,9 @@ function Pagination({ sneakerData }) {
 
    useEffect(() => {
       const itemEndOffset = itemsOffSet + itemsPerPage;
-      sneakerData && setCurrentItems(sneakerData.slice(itemsOffSet, itemEndOffset))
-      sneakerData && setPageCount(Math.ceil(sneakerData.length / itemsPerPage))
-   }, [sneakerData, itemsOffSet, itemsPerPage])
+      sneakerData && setCurrentItems(sneakerData.slice(itemsOffSet, itemEndOffset));
+      sneakerData && setPageCount(Math.ceil(sneakerData.length / itemsPerPage));
+   }, [sneakerData, itemsOffSet, itemsPerPage]);
 
    const handlePageClick = (e) => {
       const newItemOffSet = (e.selected * itemsPerPage) % sneakerData.length;

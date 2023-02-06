@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
-import styles from './Cart.module.css'
-import { useDispatch } from "react-redux";
-import { removeFromCart, emptyCart } from "../features/cartSlice";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart, emptyCart } from "../features/cartSlice";
+import styles from './Cart.module.css';
 
 const Cart = () => {
    const cartItems = useSelector(state => state.cart.value);
@@ -20,13 +19,12 @@ const Cart = () => {
             setIsProceeding(true);
          }, 1500)
          setIsProceeding(false);
-
       }
    }, [paymentCompleted])
 
    const handlePaymentClick = () => {
       setPaymentCompleted(true);
-      dispatch(emptyCart(0, cartItems.length))
+      dispatch(emptyCart(0, cartItems.length));
    }
 
    return (
