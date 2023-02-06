@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, Navigate } from "react-router-dom";
 import { Formik, Field, Form } from 'formik';
-import { auth, googleProvider, firebase } from '../../firebase/base'
+import { auth, googleProvider, firebase } from '../../features/firebase/base'
 import { signInWithPopup } from "firebase/auth";
 
 import styles from './AccountForm.module.css'
