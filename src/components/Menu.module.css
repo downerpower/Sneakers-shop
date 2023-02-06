@@ -82,3 +82,14 @@
       width: 50%;
    }
 }
+
+@media screen and (max-width: 486px) {
+   .menuBtns {
+      gap: 0.5rem
+   }
+
+   .menuBtns button {
+      padding: 0.4rem 0.4rem;
+      font-size: 0.8rem;
+   }
+}

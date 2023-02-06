@@ -12,8 +12,6 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
 
    const {isMobile} = useWindowWidthContextContext();
 
-   console.log(isMobile)
-
    const favoriteItems = useSelector(state => state.favorites.value);
    const cartItems = useSelector(state => state.cart.value);
 

@@ -48,7 +48,7 @@
 }
 
 .img {
-   width: 23rem;
+   max-width: 23rem;
    border-radius: 15px;
    opacity: 0.8;
 }
@@ -122,4 +122,52 @@
    font-size: 2rem;
    text-align: center;
    margin-top: 4rem;
- }
+}
+
+@media screen and (max-width: 768px) {
+   .container {
+      margin-top: 1rem;
+      padding: 1rem;
+   }
+
+   .wrapper {
+      gap: 0.5rem;
+   }
+
+   .img {
+      max-width: 18rem;
+   }
+
+   .form {
+      gap: 1rem;
+      padding: 0.5rem;
+   }
+
+   .form input {
+      padding: 0.7rem 0.4rem;
+   }
+
+   .error {
+      margin-top: -1.1rem;
+   }
+
+   .btn {
+      margin-top: 1rem;
+   }
+
+   .btnSocial {
+      margin-top: -0.7rem;
+   }
+}
+
+@media screen and (max-width: 586px) {
+   .wrapper {
+      flex-direction: column;
+   }
+   .img {
+      max-width: 15rem;
+   }
+   .form {
+      width: 100%;
+   }
+}
