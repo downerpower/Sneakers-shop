@@ -14,7 +14,9 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(
+    () => !!JSON.parse(localStorage.getItem("isLogged"))
+  );
   const [userName, setUserName] = useState('');
 
   const navigate = useNavigate();
@@ -26,12 +28,8 @@ function App() {
   }, [location]);
 
   useEffect(() => {
-    localStorage.setItem('loginState', JSON.stringify(isLogged));
+    localStorage.setItem('isLogged', JSON.stringify(isLogged));
   }, [isLogged]);
-
-  useEffect(() => {
-    setIsLogged(localStorage.getItem('loginState'))
-  }, []);
 
   const handleSelectOptionChange = (e) => {
     !selectedOption ? setSelectedOption(e.value) : setSelectedOption(null);
