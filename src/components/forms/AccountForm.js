@@ -67,7 +67,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
          {!isLogged &&
             <div className={styles.container}>
                <div className={styles.wrapper}>
-                  {isSignUpForm && <img src="img/sneak-signup.jpg" alt="sneaker" className={styles.img} />}
+                  {isSignUpForm && <img src="./img/sneak-signup.jpg" alt="sneaker" className={styles.img} />}
                   <Formik
                      initialValues={isSignUpForm ? {
                         firstName: '',
@@ -164,7 +164,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                            {isPasswordWrong && <div className={styles.error}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z" /><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" fill="rgba(255,26,64,1)" /></svg> Password is incorrect</div>}
                            <button className={styles.btn} type="submit" onClick={() => validateForm()}>{isSignUpForm ? 'Sign up' : 'Log in'}</button>
                            <button className={`${styles.btn} ${styles.btnSocial}`} onClick={handleGoogleSignUp} type="button">
-                            <img src='img/google.png' alt='google-logo' />  Log in with Google 
+                              <img src='./img/google.png' alt='google-logo' />  Log in with Google
                            </button>
                            {
                               isSignUpForm ?
@@ -174,7 +174,7 @@ const AccountForm = ({ isLogged, setIsLogged, userName, setUserName, isSignUpFor
                         </Form>
                      )}
                   </Formik>
-                  {!isSignUpForm && <img className={styles.img} src="img/sneaker.jpg" alt="sneaker" />}
+                  {!isSignUpForm && <img className={styles.img} src="./img/sneaker.jpg" alt="sneaker" />}
                </div>
             </div >
          }

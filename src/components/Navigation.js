@@ -41,7 +41,7 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
                }
                <Link to='/'>
                   <div>
-                     <img src='img/logo.png' alt='logo' />
+                     <img src='./img/logo.png' alt='logo' />
                   </div>
                </Link>
             </div>
@@ -170,7 +170,7 @@ const Navigation = ({ handleMenuOpenClick, handleMenuCloseClick, isMenuOpen, han
                   </Link>
                </div>
             </div>
-            <img src='img/converse.png' alt='converse' />
+            <img src='./img/converse.png' alt='converse' />
          </div>}
       </>
    );
