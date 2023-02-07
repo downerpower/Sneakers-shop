@@ -1,6 +1,6 @@
-## California (Sneakers shop)
+# California (Sneakers shop)
 
-# Languages and Tools  
+## Languages and Tools  
 <div align="center"> 
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="25" /></a>
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="25" /></a>
@@ -10,11 +10,11 @@
 <a href="https://firebase.google.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="25" /></a>
 </div>
 
-# Description
+## Description
 Description
 Online store where the user can authorize, search, filter and sort products, add them to favorites and to the cart. 
 
-# Features
+## Features
 - Getting data from Draftbit API using Fetch API;
 - Implementing authentication functionality with the help of Firebase Google authentication;
 - Using Firebase Realtime database to store date to add log in and sign up functionality;
