@@ -11,7 +11,6 @@ https://downerpower-california.netlify.app/
 </div>
 
 ## Description
-Description
 Online store where the user can authorize, search, filter and sort products, add them to favorites and to the cart. 
 
 ## Features
