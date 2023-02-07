@@ -19,6 +19,7 @@ Online store where the user can authorize, search, filter and sort products, add
 - Implementing authentication functionality with the help of Firebase Google authentication;
 - Using Firebase Realtime database to store date to add log in and sign up functionality;
 - Adding log in state to localStorage;
+- Responsive design
 
 
 
