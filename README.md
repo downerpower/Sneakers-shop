@@ -14,7 +14,7 @@ https://downerpower-california.netlify.app/
 Online store where the user can authorize, search, filter and sort products, add them to favorites and to the cart. 
 
 ## Features
-- Getting data from Draftbit API using Fetch API;
+- Getting data from Draftbit API (https://example-data.draftbit.com/) using Fetch API;
 - Implementing authentication functionality with the help of Firebase Google authentication;
 - Using Firebase Realtime database to store date to add log in and sign up functionality;
 - Adding log in state to localStorage;
