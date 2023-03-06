@@ -63,6 +63,10 @@
    cursor: pointer;
 }
 
+.btnSignUp {
+   color: black;
+}
+
 .btnLogIn {
    background-color: black;
    color: #EFEFEF;

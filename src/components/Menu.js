@@ -29,7 +29,7 @@ const Menu = ({ handleMenuCloseClick, handleLinkOpenClick, isLogged, setIsLogged
                   <button className={styles.btnLogIn}>Log in</button>
                </Link>
                <Link to='/signUp'>
-                  <button>Sign up</button>
+                  <button className={styles.btnSignUp} >Sign up</button>
                </Link>
             </div> :
                <div className={styles.menuBtns}>
