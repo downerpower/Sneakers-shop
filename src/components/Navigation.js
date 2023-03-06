@@ -17,7 +17,7 @@ const Navigation = ({
   selectedOption,
   handleLinkOpenClick,
 }) => {
-  const [isMainHidden, setIsMainHidden] = useState(false);
+  // const [isMainHidden, setIsMainHidden] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
   const options = [
@@ -25,22 +25,22 @@ const Navigation = ({
     { value: "desc", label: "Price high to low" },
   ];
 
-  const pathname = window.location.pathname;
+  // const pathname = window.location.pathname;
 
-  useEffect(() => {
-    if (pathname !== "/" && pathname !== "/women" && pathname !== "/men" && pathname !== "/child") {
-      setIsMainHidden(true);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (pathname !== "/" && pathname !== "/women" && pathname !== "/men" && pathname !== "/child") {
+  //     setIsMainHidden(true);
+  //   }
+  // }, [pathname]);
 
   const { isMobile } = useWindowWidthContextContext();
 
   const favoriteItems = useSelector((state) => state.favorites.value);
   const cartItems = useSelector((state) => state.cart.value);
 
-  const handleMainCloseClick = () => {
-    setIsMainHidden(true);
-  };
+  // const handleMainCloseClick = () => {
+  //   setIsMainHidden(true);
+  // };
 
   return (
     <>
@@ -271,7 +271,7 @@ const Navigation = ({
           </form>
         </motion.div>
       )}
-      {!isMainHidden && (
+      {/* {!isMainHidden && (
         <motion.div
           className={styles.mainContainer}
           initial="hidden"
@@ -311,7 +311,7 @@ const Navigation = ({
           </div>
           <img src="./img/converse.png" alt="converse" />
         </motion.div>
-      )}
+      )} */}
     </>
   );
 };

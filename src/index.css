@@ -42,12 +42,21 @@ code {
   background-color: red;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .sneaker-list {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
   margin: 1rem;
+  margin-right: auto
 }
 
 .pagination {

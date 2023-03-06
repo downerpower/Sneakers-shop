@@ -1,0 +1,87 @@
+.mainContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4.5vw 3vw 4.5vw;
+  background-color: #dce5e2;
+  border-radius: 25px;
+  margin: 1.5rem 1rem;
+}
+
+.mainContainer img {
+  width: 30vw;
+  height: auto;
+}
+
+.mainBtnClose {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 30px;
+}
+
+.mainBtnClose:hover {
+  transform: scale(1.1);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-size: 4.5vw;
+  font-family: "Readex Pro";
+  font-weight: 600;
+  gap: 1rem;
+}
+
+.mainContent p {
+  margin: 0;
+}
+
+.mainBtns {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.mainBtns button {
+  padding: 0.5rem 0.8rem;
+  font-family: "Readex Pro";
+  font-size: 2vw;
+  border: 0;
+  cursor: pointer;
+}
+
+.btnSignUp {
+  color: black;
+}
+
+.btnLogIn {
+  background-color: black;
+  color: #efefef;
+}
+
+.mainBtns button:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    max-width: 8rem;
+  }
+
+  .mainBtnClose {
+    width: 20px;
+  }
+
+  svg {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .mainContainer {
+    border-radius: 15px;
+    margin: 1rem;
+  }
+}
