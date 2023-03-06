@@ -1,5 +1,5 @@
 # California (Sneakers shop)
-https://downerpower-california.netlify.app/
+https://california-store.netlify.app
 
 ## Languages and Tools  
 <div> 
