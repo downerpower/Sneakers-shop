@@ -50,13 +50,17 @@ code {
 }
 
 .sneaker-list {
-  display: flex;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, 30%); */
+  grid-template-columns: repeat( auto-fit, minmax(250px, 3fr) );
+  grid-auto-rows: 1fr;
+  /* overflow: hidden; */
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-wrap: wrap; */
+  gap: 3rem;
   margin: 1rem;
-  margin-right: auto
 }
 
 .pagination {
